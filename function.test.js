@@ -1,4 +1,4 @@
-const { solution } = require('./function');
+const { solution } = require('./solution');
 
 test(`[5, 1, 10, 7], 11`, () => {
   expect(solution([5, 1, 10, 7], 11)).toEqual([[1, 10]]);
