@@ -29,3 +29,13 @@ test(`[1, 8, 9, 3, 10, 1], 12`, () => {
 test(`[1, 3, 9], 3`, () => {
   compareResultIgnoringOrder(solution([1, 3, 9], 3), []);
 });
+
+test(`[1,....,1], 1`, () => {
+  compareResultIgnoringOrder(solution(new Array(15).fill(1), 1), []);
+});
+
+test(`[1,....,1], 15`, () => {
+  compareResultIgnoringOrder(solution(new Array(15).fill(1), 15), [
+    new Array(15).fill(1),
+  ]);
+});
