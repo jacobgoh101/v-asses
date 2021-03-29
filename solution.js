@@ -16,6 +16,16 @@ arr = [1, 3, 9]
 num = 3
 Result: [] 
 */
+
+/**
+ *
+ * @param {Number} n - Size of Array
+ * @returns {Number[][]} all possible unique combination of index
+ *
+ *  e.g.
+ *  param n === 3
+ *  result: [ [ 0, 1 ], [ 0, 2 ], [ 1, 2 ], [ 0, 1, 2 ] ]
+ */
 function getAllCombinationsOfIndexByArrayLength(n) {
   if (n < 1) return [];
   if (n < 2) return [[0, 1]];
@@ -44,6 +54,7 @@ function getAllCombinationsOfIndexByArrayLength(n) {
   }
   return Object.values(map).reduce((acc, curr) => [...acc, ...curr], []);
 }
+
 function uniqueBy(arr, callback) {
   let map = {};
   return arr.filter((item) => {
@@ -53,6 +64,7 @@ function uniqueBy(arr, callback) {
     return true;
   });
 }
+
 function solution(array, targetSum) {
   const allCombinationsOfIndex = getAllCombinationsOfIndexByArrayLength(
     array.length
@@ -72,7 +84,4 @@ function solution(array, targetSum) {
   });
   return validCombinations;
 }
-console.log(solution([5, 1, 10, 7], 11));
-console.log(solution([1, 8, 9, 3, 10, 1], 12));
-console.log(solution([1, 3, 9], 3));
 exports.solution = solution;
